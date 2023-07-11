@@ -42,7 +42,7 @@
                 <tr>
                     <th scope="row">{{ $project->id }}</th>
                     <td>{{ $project->title }}</td>
-                    <td><a href="{{route('admin.categories.show', ['type' => $project->type])}}">{{ $project->type->name }}</a></td>
+                    <td><a href="{{route('admin.types.show', ['type' => $project->type])}}">{{ $project->type->name }}</a></td>
                     <td>{{ $project->description }}</td>
                     <td>{{ $project->repo }}</td>
 
