@@ -22,7 +22,7 @@ class ProjectsTableSeeder extends Seeder
 
             Project::create([
 
-                'type_id' => rand(1, 10),
+                'type_id' => rand(1, 4),
                 'title' => $faker->words(rand(2, 10), true),
                 'description' => $faker->paragraphs(rand(2, 20), true),
                 'repo' => $faker->words(rand(2, 10), true),

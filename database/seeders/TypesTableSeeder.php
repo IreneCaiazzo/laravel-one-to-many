@@ -17,6 +17,9 @@ class TypesTableSeeder extends Seeder
     {
         $types = [
             [
+                'name' => 'Undefined',
+            ],
+            [
                 'name' => 'Frontend',
             ],
             [
