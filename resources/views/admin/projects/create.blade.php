@@ -35,13 +35,21 @@
 
         <div class="mb-3">
             <label for="type" class="form-label">Type</label>
-            <select class="form-select" aria-label="Type" id="type">
+            <select class="form-select" @error('type_id') is-invalid @enderror 
+                id="type" 
+                name="type_id"
+            >
 
                 @foreach($types as $type)
                 <option value="{{ $type->id }}">{{ $type->name }}</option>
                 @endforeach
-                
+
             </select>
+            @error('type_id')
+                <div class="invalid-feedback">
+                    {{ $message }}
+                </div>
+            @enderror
         </div>
 
         <div class="mb-3">

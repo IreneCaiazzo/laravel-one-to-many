@@ -11,6 +11,7 @@ class ProjectController extends Controller
 {
     private $validations = [
         'title'       => 'required|string|min:5|max:100',
+        'type_id'     => 'required|integer|exists:types,id',
         'description' => 'required|string',
         'repo'        => 'required|string|min:5|max:100',
     ];
@@ -19,6 +20,7 @@ class ProjectController extends Controller
         'required' => 'Il campo :attribute è obbligatorio',
         'min' => 'Il campo :attribute deve avere almeno :min caratteri',
         'max' => 'Il campo :attribute non può superare i :max caratteri',
+        'exists' => 'Valore non valido',
     ];
 
     /**
@@ -62,6 +64,7 @@ class ProjectController extends Controller
         $newProject = new Project();
 
         $newProject->title = $data['title'];
+        $newProject->type_id = $data['type_id'];
         $newProject->description = $data['description'];
         $newProject->repo = $data['repo'];
 
@@ -90,7 +93,8 @@ class ProjectController extends Controller
      */
     public function edit(Project $project)
     {
-        return view('admin.projects.edit', compact('project'));
+        $types = Type::all();
+        return view('admin.projects.edit', compact('project', 'types'));
     }
 
     /**
