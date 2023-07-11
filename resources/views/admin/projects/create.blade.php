@@ -34,6 +34,17 @@
         </div>
 
         <div class="mb-3">
+            <label for="type" class="form-label">Type</label>
+            <select class="form-select" aria-label="Type" id="type">
+
+                @foreach($types as $type)
+                <option value="{{ $type->id }}">{{ $type->name }}</option>
+                @endforeach
+                
+            </select>
+        </div>
+
+        <div class="mb-3">
             <label for="description" class="form-label">Description</label>
             <input
                 type="text"

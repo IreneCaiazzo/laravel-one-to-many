@@ -30,7 +30,8 @@
         <thead>
             <tr>
                 <th scope="col">ID</th>
-                <th scope="col">Titolo</th>
+                <th scope="col">Title</th>
+                <th scope="col">Type</th>
                 <th scope="col">Description</th>
                 <th scope="col">Repo</th>
                 <th scope="col">Actions</th>
@@ -41,6 +42,7 @@
                 <tr>
                     <th scope="row">{{ $project->id }}</th>
                     <td>{{ $project->title }}</td>
+                    <td>{{ $project->type->name }}</td>
                     <td>{{ $project->description }}</td>
                     <td>{{ $project->repo }}</td>
 
