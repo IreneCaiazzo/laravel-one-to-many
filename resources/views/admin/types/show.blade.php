@@ -7,6 +7,7 @@
 
     <h2>Projects of this type</h2>
     <ul>
+      
         @foreach ($type->projects as $project)
             <li><a href="{{route('admin.projects.show', ['project' => $project])}}">{{ $project->title }}</a></li>   
         @endforeach
